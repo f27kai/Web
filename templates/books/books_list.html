@@ -2,9 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Books_list</title>
 </head>
 <body>
+<h1>{{ Книги }}</h1>
+
+{% for book in books %}
+<div>
+    <img src="{{ book.img.url }}" width="300" height="600">
+    <h4>Название книги: {{book.title}}</h4>
+    <p>Автор книги: {{book.author}}</p>
+    <a href="{% url 'book_detail' book.pk %}">Подробнее</a>
+</div>
+<br>
+{% endfor %}
 
 </body>
 </html>

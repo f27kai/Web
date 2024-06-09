@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
-    <mapping directory="$PROJECT_DIR$/../.." vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/../../geeks1/Backend/lesson2" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/../../geeks1/bank" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/../../geeks1/task2moons" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/../../geeks2/26_bot" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/../../geeks2/Base_sql" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/../../geeks2/HomeWork" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/../../geeks2/bank" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/../../geeks2/powtor" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/../../geeks3/Bot" vcs="Git" />
+    <mapping directory="$USER_HOME$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
   </component>
 </project>
