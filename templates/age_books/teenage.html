@@ -1,0 +1,18 @@
+{% include 'header.html' %}
+<ol>
+    {% for teenage in teenages %}
+    <li><br>
+        <img src="{{ teenage.img.url }}" width="300" height="600">
+        <h1>{{teenage.title}}</h1>
+        <h4>{{teenage.author}}</h4>
+        <p>{{teenage.email}}</p>
+        <p>{{teenage.text}}</p>
+        <p>{{teenage.genre}}</p>
+        {% for teenage in teenage.age_books.all %}
+            <h6>#{{teenage.types}}</h6>
+        {% endfor %}
+    </li>
+    {% endfor %}
+</ol>
+
+{% include 'footer.html' %}

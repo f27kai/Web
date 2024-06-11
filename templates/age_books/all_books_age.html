@@ -1,0 +1,18 @@
+{% include 'header.html' %}
+<ol>
+    {% for i in all_books_age %}
+    <li><br>
+        <img src="{{ i.img.url }}" width="300" height="600">
+        <h1>{{i.title}}</h1>
+        <h4>{{i.author}}</h4>
+        <p>{{i.email}}</p>
+        <p>{{i.text}}</p>
+        <p>{{i.genre}}</p>
+        {% for i in i.age_books.all %}
+            <h6>#{{i.types}}</h6>
+        {% endfor %}
+    </li>
+    {% endfor %}
+</ol>
+
+{% include 'footer.html' %}

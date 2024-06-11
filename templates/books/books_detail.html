@@ -1,15 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Books_detail</title>
-</head>
-<body>
+{% include 'header.html' %}
 <h1>О книге</h1>
 <img src="{{ books_id.img.url }}" width="300" height="600">
 <h4>Название книги: {{books_id.title}}</h4>
 <h6>Автор книги: {{books_id.author}}</h6>
 <p>Краткое описание: {{books_id.text}}</p>
 <data>Дата создания книги: {{books_id.created_books}}</data>
-</body>
-</html>
+
+<ol>
+    {% for i in books_id.review_books.all %}
+    <li>
+        <h1>{{ i.stars }}</h1>
+        <p>{{ i.text }}</p>
+        <p>{{ i.created_at }}</p>
+    </li>
+    {% endfor %}
+</ol>
+
+{% include 'footer.html' %}

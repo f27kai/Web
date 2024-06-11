@@ -5,6 +5,54 @@ import random
 from . import models
 
 
+
+
+def all_books_age_view(request):
+    if request.method == "GET":
+        all_books_age = models.Books.objects.filter().order_by("-id")
+        return render(
+            request,
+            template_name='age_books/all_books_age.html',
+            context={
+                "all_books_age": all_books_age
+            }
+        )
+
+
+def children(request):
+    if request.method == "GET":
+        childrens = models.Books.objects.filter(age_books__types = "Книги для детей").order_by("-id")
+        return render(
+            request,
+            template_name="age_books/children.html",
+            context={
+                'childrens': childrens
+            }
+        )
+
+def teenage(request):
+    if request.method == "GET":
+        teenages = models.Books.objects.filter(age_books__types="Книги для подростков").order_by("-id")
+        return render(
+            request,
+            template_name="age_books/teenage.html",
+            context={
+                "teenages": teenages
+            }
+        )
+
+
+def adults(request):
+    if request.method == "GET":
+        adults = models.Books.objects.filter(age_books__types="Книги для взрослых").order_by("-id")
+        return render(
+            request,
+            template_name="age_books/adults.html",
+            context={
+                "adults": adults
+            }
+        )
+
 def book_list_view(request):
     if request.method == "GET":
         books = models.Books.objects.filter().order_by("-id")

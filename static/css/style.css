@@ -1,0 +1,56 @@
+/* Кнопки */
+.myBtnContainer {
+  margin-bottom: 20px;
+}
+
+.myBtnContainer .btn {
+  display: block;
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+/* Контейнер для книг */
+.book-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Расстояние между элементами */
+}
+
+/* Элемент книги */
+.book-item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start; /* Выравнивание элементов по верхнему краю */
+  gap: 20px; /* Расстояние между изображением и текстом */
+  border: 1px solid #ddd; /* Граница вокруг элемента книги */
+  padding: 10px; /* Отступ внутри элемента книги */
+}
+
+/* Изображение книги */
+.book-image img {
+  max-width: 300px; /* Ограничение ширины изображения */
+  max-height: 600px; /* Ограничение высоты изображения */
+  object-fit: cover; /* Обрезка изображения по размеру контейнера */
+}
+
+/* Информация о книге */
+.book-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.book-info h4,
+.book-info p,
+.book-info a {
+  margin: 0;
+}
+
+.book-info a {
+  color: #007BFF; /* Цвет ссылки */
+  text-decoration: none; /* Убирает подчеркивание у ссылки */
+}
+
+.book-info a:hover {
+  text-decoration: underline; /* Подчеркивание при наведении */
+}

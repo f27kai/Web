@@ -1,0 +1,18 @@
+{% include 'header.html' %}
+<ol>
+    {% for children in childrens %}
+    <li><br>
+        <img src="{{ children.img.url }}" width="300" height="600">
+        <h1>{{children.title}}</h1>
+        <h4>{{children.author}}</h4>
+        <p>{{children.email}}</p>
+        <p>{{children.text}}</p>
+        <p>{{children.genre}}</p>
+        {% for children in children.age_books.all %}
+            <h6>#{{children.types}}</h6>
+        {% endfor %}
+    </li>
+    {% endfor %}
+</ol>
+
+{% include 'footer.html' %}

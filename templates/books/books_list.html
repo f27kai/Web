@@ -1,21 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Books_list</title>
-</head>
-<body>
-<h1>{{ Книги }}</h1>
+{% include 'header.html' %}
 
-{% for book in books %}
-<div>
+<div class="myBtnContainer">
+  <a href="/all_books_age/"><button class="btn active"> Показать все</button></a><br>
+  <a href="/children/"><button class="btn children">Книги для детей</button></a><br>
+  <a href="/teenage/"><button class="btn children">Книги для подростков</button></a><br>
+  <a href="/adults/"><button class="btn children">Книги для взрослых</button></a><br>
+  {% for book in books %}
+  <div>
     <img src="{{ book.img.url }}" width="300" height="600">
     <h4>Название книги: {{book.title}}</h4>
     <p>Автор книги: {{book.author}}</p>
     <a href="{% url 'book_detail' book.pk %}">Подробнее</a>
+  </div>
+  <br>
+  {% endfor %}
 </div>
-<br>
-{% endfor %}
 
-</body>
-</html>
+{% include 'footer.html' %}
