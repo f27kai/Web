@@ -1,8 +1,30 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 import datetime
 import random
 from . import models
+from .forms import BooksForm
+
+
+
+def create_books_view(request):
+    if request.method == "POST":
+        form = BooksForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return HttpResponse('<h3>Книга успешно добавлена!</h3>'
+                                '<a href="/books_list/">Список книг</a>')
+
+    else:
+        form = BooksForm()
+
+    return render(
+        request,
+        template_name="crud_books/create_books.html",
+        context={
+            "form": form
+        }
+    )
 
 
 

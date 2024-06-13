@@ -1,56 +1,163 @@
-/* Кнопки */
 .myBtnContainer {
-  margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Расстояние между кнопками */
+    margin-bottom: 20px; /* Отступ снизу, чтобы кнопки не прилегали к списку книг */
 }
 
-.myBtnContainer .btn {
-  display: block;
-  width: 200px;
-  margin-bottom: 10px;
+.btn-link {
+    text-decoration: none; /* Убираем подчеркивание ссылок */
+    display: inline-block; /* Для ссылки с кнопкой, чтобы она вела себя как кнопка */
 }
 
-/* Контейнер для книг */
-.book-container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px; /* Расстояние между элементами */
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    background-color: #f0f0f0; /* Основной цвет фона кнопки */
 }
 
-/* Элемент книги */
+.active {
+    background-color: #4CAF50; /* Цвет фона активной кнопки */
+    color: white; /* Цвет текста активной кнопки */
+}
+
+.children, .teenage, .adults {
+    background-color: #008CBA; /* Цвет фона для детских, подростковых и взрослых книг */
+    color: white; /* Цвет текста для этих кнопок */
+}
+
+.btn:hover {
+    background-color: #555; /* Цвет фона при наведении */
+    color: white; /* Цвет текста при наведении */
+}
+
+.book-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Расстояние между книгами */
+    justify-content: center; /* Центровка книг */
+}
+
 .book-item {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start; /* Выравнивание элементов по верхнему краю */
-  gap: 20px; /* Расстояние между изображением и текстом */
-  border: 1px solid #ddd; /* Граница вокруг элемента книги */
-  padding: 10px; /* Отступ внутри элемента книги */
+    border: 1px solid #ddd; /* Граница вокруг книги */
+    padding: 20px; /* Внутренние отступы */
+    border-radius: 10px; /* Закругленные углы */
+    text-align: center;
+    width: 350px; /* Ширина элемента книги */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для элемента */
+    background-color: #fff; /* Фон для элемента */
+    margin: 10px; /* Внешние отступы */
 }
 
-/* Изображение книги */
-.book-image img {
-  max-width: 300px; /* Ограничение ширины изображения */
-  max-height: 600px; /* Ограничение высоты изображения */
-  object-fit: cover; /* Обрезка изображения по размеру контейнера */
+.book-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Закругленные углы для изображения */
+    margin-bottom: 15px; /* Отступ снизу */
 }
 
-/* Информация о книге */
+.book-item h4 {
+    margin: 10px 0; /* Отступы для заголовка */
+    font-size: 18px; /* Размер шрифта заголовка */
+}
+
+.book-item p {
+    margin: 10px 0; /* Отступы для параграфа */
+    font-size: 16px; /*
+
+
+/* Основные стили */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* Стиль заголовков */
+h1, h2, h3, h4, h6 {
+    margin: 20px 0;
+    color: #333;
+}
+
+/* Стиль для контейнера с деталями книги */
+.book-detail {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Стиль для информации о книге */
 .book-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 450px; /* Ограничиваем ширину текстового блока */
 }
 
-.book-info h4,
-.book-info p,
-.book-info a {
-  margin: 0;
+/* Стиль для изображений */
+.book-detail img {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 300px; /* Ограничиваем ширину изображения */
+    height: auto; /* Сохраняем пропорции изображения */
 }
 
-.book-info a {
-  color: #007BFF; /* Цвет ссылки */
-  text-decoration: none; /* Убирает подчеркивание у ссылки */
+/* Стиль для абзацев и дат */
+p, data {
+    color: #666;
+    margin: 10px 0;
 }
 
-.book-info a:hover {
-  text-decoration: underline; /* Подчеркивание при наведении */
+/* Стиль для списка отзывов */
+.reviews-list {
+    list-style-type: decimal;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+/* Стиль для элементов отзывов */
+.review-item {
+    background-color: #fff;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.review-item h3 {
+    margin: 0;
+    color: #333;
+}
+
+.review-item p {
+    margin: 10px 0;
+    color: #666;
+}
+
+.review-item small {
+    color: #999;
+    font-size: 12px;
+}
+
+/* Стиль для ссылок */
+a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }

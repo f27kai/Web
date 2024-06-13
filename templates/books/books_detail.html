@@ -1,17 +1,23 @@
 {% include 'header.html' %}
 <h1>О книге</h1>
-<img src="{{ books_id.img.url }}" width="300" height="600">
-<h4>Название книги: {{books_id.title}}</h4>
-<h6>Автор книги: {{books_id.author}}</h6>
-<p>Краткое описание: {{books_id.text}}</p>
-<data>Дата создания книги: {{books_id.created_books}}</data>
 
-<ol>
+<div class="book-detail">
+    <img src="{{ books_id.img.url }}" width="300" height="600" alt="Обложка книги">
+    <div class="book-info">
+        <h4>Название книги: {{ books_id.title }}</h4>
+        <h6>Автор книги: {{ books_id.author }}</h6>
+        <p>Краткое описание: {{ books_id.text }}</p>
+        <data>Дата создания книги: {{ books_id.created_books }}</data>
+    </div>
+</div>
+
+<h2>Отзывы</h2>
+<ol class="reviews-list">
     {% for i in books_id.review_books.all %}
-    <li>
-        <h1>{{ i.stars }}</h1>
+    <li class="review-item">
+        <h3>Оценка: {{ i.stars }} звезд</h3>
         <p>{{ i.text }}</p>
-        <p>{{ i.created_at }}</p>
+        <small>Дата отзыва: {{ i.created_at }}</small>
     </li>
     {% endfor %}
 </ol>
