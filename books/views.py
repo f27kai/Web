@@ -7,6 +7,35 @@ from .forms import BooksForm
 
 
 
+def update_book_view(request, id):
+    update_book = get_object_or_404(models.Books, id=id)
+
+    if request.method == "POST":
+        form = BooksForm(request.POST, instance=update_book)
+        if form.is_valid():
+            form.save()
+            return HttpResponse('<h3>Книга успешно изменена!</h3>'
+                                '<a href="/books_list/">Список книг</a>')
+    else:
+        form = BooksForm(instance=update_book)
+
+    return render(
+        request,
+        template_name="crud_books/update_books.html",
+        context={
+            "form": form,
+            "update_book": update_book
+        }
+    )
+
+
+def delete_books_view(request, id):
+    book_id = get_object_or_404(models.Books, id=id)
+    book_id.delete()
+    return HttpResponse('<h3>Книга успешно удалено!</h3>'
+                        '<a href="/books_list/">Список книг</a>')
+
+
 def create_books_view(request):
     if request.method == "POST":
         form = BooksForm(request.POST, request.FILES)

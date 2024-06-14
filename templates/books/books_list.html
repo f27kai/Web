@@ -17,6 +17,9 @@
     <h4>Название книги: {{ book.title }}</h4>
     <p>Автор книги: {{ book.author }}</p>
     <a href="{% url 'book_detail' book.pk %}">Подробнее</a>
+    <a href="{% url 'delete_books' book.pk %}" class="btn btn-primary">Удалить</a>
+    <br><br>
+    <a href="{% url 'update_book' book.pk %}" class="btn btn-primary">Редактировать</a>
   </div>
   {% endfor %}
 </div>

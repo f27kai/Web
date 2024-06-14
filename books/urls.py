@@ -5,6 +5,8 @@ from django.conf import settings
 
 urlpatterns = [
     path('create_books/', views.create_books_view, name="create_books"),
+    path('books/<int:id>/', views.delete_books_view, name="delete_books"),
+    path('books_update/<int:id>/', views.update_book_view, name="update_book"),
 
     path('all_books_age/', views.all_books_age_view),
     path('children/', views.children),

@@ -1,0 +1,11 @@
+{% include "header.html" %}
+<form class="decor" method="POST" enctype="multipart/form-data">
+    <h3>Изменить книгу</h3>
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Изменить">
+    <input type="reset" value="Очистить">
+</form>
+
+
+{% include "footer.html" %}
