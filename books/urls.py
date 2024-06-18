@@ -4,16 +4,18 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
-    path('create_books/', views.create_books_view, name="create_books"),
-    path('books/<int:id>/', views.delete_books_view, name="delete_books"),
-    path('books_update/<int:id>/', views.update_book_view, name="update_book"),
+    path('search/', views.Search_books.as_view(), name='search'),
 
-    path('all_books_age/', views.all_books_age_view),
-    path('children/', views.children),
-    path('teenage/', views.teenage),
-    path('adults/', views.adults),
-    path("books_list/", views.book_list_view, name='book_list'),
-    path('book/<int:id>/', views.books_detail_view, name='book_detail'),
+    path('create_books/', views.Create_books_view.as_view(), name="create_books"),
+    path('books/<int:id>/', views.Delete_books_view.as_view(), name="delete_books"),
+    path('books_update/<int:id>/', views.Update_book_view.as_view(), name="update_book"),
+
+    path('all_books_age/', views.All_books_age_view.as_view()),
+    path('children/', views.Children.as_view()),
+    path('teenage/', views.Teenage.as_view()),
+    path('adults/', views.Adults.as_view()),
+    path("books_list/", views.Book_list_view.as_view(), name='book_list'),
+    path('book/<int:id>/', views.Books_detail_view.as_view(), name='book_detail'),
     path("name/", views.name_surname_view),
     path("hobby/", views.hobby_view),
     path("datetime/", views.get_datetime_view),
