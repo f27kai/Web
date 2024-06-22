@@ -1,0 +1,24 @@
+{% include "header.html" %}
+<ul>
+    {% for user in object_list %}
+    <li>
+        <h1>Привет - {{ user.username }}</h1>
+        <p>Почта - {{ user.email }}</p>
+        <p>Имя - {{ user.first_name }}</p>
+        <p>Возраст - {{ user.age }}</p>
+        {% if user.club %}
+        <p>Вы принадлежите к клубу: {{ user.club }}</p>
+        {% else %}
+        <p>Клуб не определен</p>
+        {% endif %}
+        <p>Специальность: {{ user.specialty }}</p>
+    </li>
+    {% endfor %}
+</ul>
+
+<form action="{% url 'users:login' %}" method="post">
+    {% csrf_token %}
+    <button type="submit">Выйти из аккаунта</button>
+</form>
+
+{% include "footer.html" %}
