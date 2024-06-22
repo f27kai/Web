@@ -61,7 +61,7 @@ class Update_book_view(generic.UpdateView):
 
 # Delete
 class Delete_books_view(generic.DeleteView):
-    template_name = "crud_books/delete_book"
+    template_name = "crud_books/delete_book.html"
     success_url = '/books_list/'
 
     def get_object(self, **kwargs):
