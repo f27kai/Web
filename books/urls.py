@@ -14,7 +14,7 @@ urlpatterns = [
     path('children/', views.Children.as_view()),
     path('teenage/', views.Teenage.as_view()),
     path('adults/', views.Adults.as_view()),
-    path("books_list/", views.Book_list_view.as_view(), name='book_list'),
+    path("", views.Book_list_view.as_view(), name='book_list'),
     path('book/<int:id>/', views.Books_detail_view.as_view(), name='book_detail'),
     path("name/", views.name_surname_view),
     path("hobby/", views.hobby_view),
